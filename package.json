@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ajv": "^6.6.1",
     "firebase": "^5.7.0",
+    "merge": "^1.2.1",
     "moment": "^2.23.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
