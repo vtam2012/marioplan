@@ -1,4 +1,4 @@
-#MarioPlan
+##MarioPlan
 
 A simple project planner.
 
