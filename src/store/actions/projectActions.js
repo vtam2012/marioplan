@@ -17,3 +17,21 @@ export const createProject = (project) => {
     })
   }
 };
+
+export const deleteProject = (project) => {
+  return (dispatch, getState, { getFirebase, getFirestore }) => {
+    const firestore = getFirestore();
+    firestore.collection('projects')
+      .where('createdAt', '==', project.createdAt)
+      .where('authorId', '==', project.authorId).get()
+      .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+            doc.ref.delete();
+          })
+        dispatch({type: 'DELETE_PROJECT', project});
+      })
+      .catch((err) => {
+        dispatch({type: 'DELETE_PROJECT_ERROR', err });
+      })
+  }
+};

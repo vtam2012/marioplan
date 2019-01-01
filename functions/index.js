@@ -40,5 +40,4 @@ exports.userJoined = functions.auth.user()
         
         return createNotification(notification);
     })
-
 })
